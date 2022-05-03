@@ -14,8 +14,8 @@ from nanomesh import Mesher, Plane, metrics
 from nanomesh.data import binary_blobs2d, nanopores
 from nanomesh.image._image import _threshold_dispatch
 
-st.set_page_config(page_title='Nanomesh dashboard',
-                   page_icon='🔺',
+st.set_page_config(page_title='Nanomesh meshing',
+                   page_icon='📐',
                    initial_sidebar_state='expanded')
 
 st.title('Generate 2D mesh')
@@ -202,9 +202,14 @@ st.bokeh_chart(fig)
 
 st.header('Mesh metrics')
 
+def format_func(raw_string):
+    return metrics._metric_dispatch[raw_string].name
+
 metrics_list = st.multiselect('Select which metrics to plot',
                               default='area',
-                              options=list(metrics._metric_dispatch))
+                              options=list(metrics._metric_dispatch),
+                              format_func=format_func)
+
 
 for metric in metrics_list:
     fig = get_metric_hist(triangle_mesh, metric)
