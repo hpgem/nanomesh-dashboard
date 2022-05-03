@@ -9,6 +9,10 @@ from bokeh_plots import get_meshplot
 
 from nanomesh import MeshContainer, data, metrics
 
+st.set_page_config(page_title='Nanomesh metrics',
+                   page_icon='📊',
+                   initial_sidebar_state='expanded')
+
 st.title('Compare mesh metrics')
 st.write('Upload your own mesh or use the example data to generate metrics!')
 

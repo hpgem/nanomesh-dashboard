@@ -14,8 +14,8 @@ from nanomesh import Mesher, Plane, metrics
 from nanomesh.data import binary_blobs2d, nanopores
 from nanomesh.image._image import _threshold_dispatch
 
-st.set_page_config(page_title='Nanomesh dashboard',
-                   page_icon='🔺',
+st.set_page_config(page_title='Nanomesh meshing',
+                   page_icon='📐',
                    initial_sidebar_state='expanded')
 
 st.title('Generate 2D mesh')
