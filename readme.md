@@ -4,7 +4,7 @@ This repo contains dashboards for nanomesh. A dashboard is a web app to glance a
 
 ### Using nanomesh in your browser
 
-| ![Generate a 2D mesh](notebooks/docs/_static/meshing_dash.png) | ![Calculate mesh metrics](notebooks/docs/_static/metrics_dash.png)| |
+| <img src="https://github.com/hpgem/nanomesh/raw/master/docs/_static/meshing_dash.png" alt="drawing" width="85%"/> | <img src="https://github.com/hpgem/nanomesh/raw/master/docs/_static/metrics_dash.png" alt="drawing" width="85%"/> |
 | - | - |
 | [Generate a 2D mesh](https://share.streamlit.io/hpgem/nanomesh/master/dash/meshing_dash.py) | [Calculate mesh metrics](https://share.streamlit.io/hpgem/nanomesh/master/dash/meshing_dash.py) |
 
