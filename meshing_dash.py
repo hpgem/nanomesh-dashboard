@@ -187,14 +187,18 @@ with c2:
 
 st.header('Triangulation')
 
-opts = st.text_input(
-    'Triangulation options',
-    value='q30a5',
-    help=('For more information, check out the [triangle documentation]'
-          '(https://rufat.be/triangle/API.html#triangle.triangulate).'))
+c1, c2 = st.columns(2)
+
+with c1:
+    min_angle = st.number_input('Minimum angle (degrees)', value=20, step=5, min_value=0, max_value=30,
+        help="Generate a quality mesh with angles no smaller than specified."
+        )
+with c2:
+    max_area = st.number_input('Maximum triangle area (#pixels)', value=5, step=1, min_value=1,
+        help="Specify the maximum triangle area in pixels.")
 
 with st.spinner('Triangulating...'):
-    mesh_container = triangulate(mesher, opts=opts)
+    mesh_container = triangulate(mesher, opts={'q': min_angle, 'a': max_area})
     triangle_mesh = mesh_container.get('triangle')
 
 fig = get_meshplot(triangle_mesh)
