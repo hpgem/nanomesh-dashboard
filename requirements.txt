@@ -1,4 +1,4 @@
-altair==4.20
+altair==4.2.0
 bokeh!=2.4.2
 nanomesh>=0.8.1
 streamlit==1.1.0
